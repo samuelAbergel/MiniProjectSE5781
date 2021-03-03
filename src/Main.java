@@ -54,6 +54,7 @@ public final class Main {
         Vector vCopyNormalize = vCopy.normalize();
         if (vCopy != vCopyNormalize)
             out.println("ERROR: normalize() function creates a new vector");
+        double ok = vCopyNormalize.length() - 1;
         if (!isZero(vCopyNormalize.length() - 1))
             out.println("ERROR: normalize() result is not a unit vector");
         Vector u = v.normalized();
