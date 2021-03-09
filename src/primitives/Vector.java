@@ -29,18 +29,19 @@ public class Vector {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
         double u3 = _head._z.coord;
+
         double v1 = v._head._x.coord;
         double v2 = v._head._y.coord;
         double v3 = v._head._z.coord;
 
         return (u1 * v1 + u2 * v2 + u3 * v3);
-
     }
 
     public Vector crossProduct(Vector v) {
         double u1 = _head._x.coord;
         double u2 = _head._y.coord;
         double u3 = _head._z.coord;
+
         double v1 = v._head._x.coord;
         double v2 = v._head._y.coord;
         double v3 = v._head._z.coord;
@@ -118,8 +119,11 @@ public class Vector {
 
     public Vector normalized()
     {
-        Vector vec = new Vector(new Point3D( this._head._x.coord,this._head._y.coord,this._head._z.coord)).normalize();
-        return vec;
+        Vector result  = new Vector(_head);
+        result.normalize();
+        return result;
+       /* Vector vec = new Vector(new Point3D( this._head._x.coord,this._head._y.coord,this._head._z.coord)).normalize();
+        return vec;*/
 
     }
     @Override
@@ -138,4 +142,4 @@ public class Vector {
             return false;
         return true;
     }
-}
+  }
