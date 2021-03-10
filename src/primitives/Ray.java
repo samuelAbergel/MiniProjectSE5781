@@ -6,28 +6,32 @@ public class Ray {
 
     public Ray (Point3D p, Vector v)
     {
+        this.vec=v;
         if (this.vec.normalize() == this.vec)
         {
             this.point=p;
-            this.vec=v;
         }
         else
         {
             this.vec.normalize();
             this.point=p;
-            this.vec=v;
         }
     }
 
-    public Point3D getPoint()
-    {
+    public Point3D getPoint() {
         return point;
-
     }
-    public Vector getVec()
-    {
-        return vec;
 
+    public void setPoint(Point3D point) {
+        this.point = point;
+    }
+
+    public Vector getVec() {
+        return vec;
+    }
+
+    public void setVec(Vector vec) {
+        this.vec = vec;
     }
 
     @Override

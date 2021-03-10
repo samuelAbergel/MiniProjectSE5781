@@ -23,7 +23,8 @@ public class Sphere extends RadialGeometry {
 	 
 	public Vector getNormal(Point3D c)
 	{
-		return null;
+		return  center.subtract(c).normalized();
+
 	}
 
 
