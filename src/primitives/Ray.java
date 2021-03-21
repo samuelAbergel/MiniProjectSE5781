@@ -65,4 +65,7 @@ public class Ray {
     }
 
 
+    public Point3D getTargetpoint(double t) {
+        return point.add(vec.scale(t));
+    }
 }
