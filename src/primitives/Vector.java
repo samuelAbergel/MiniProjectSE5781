@@ -142,4 +142,36 @@ public class Vector {
             return false;
         return true;
     }
+    /**
+     * @param axis axis of rotation
+     * @param theta angle of rotation
+     *
+     */
+    public void rotateVector(Vector axis, double theta) {
+        double x = this._head._x.coord;
+        double y = this._head._y.coord;
+        double z = this._head._z.coord;
+
+        double u = axis._head._x.coord;
+        double v = axis._head._y.coord;
+        double w = axis._head._z.coord;
+
+        double v1 = u * x + v * y + w * z;
+
+        double thetaRad = Math.toRadians(theta);
+
+        double xPrime = u * v1 * (1d - Math.cos(thetaRad))
+                + x * Math.cos(thetaRad)
+                + (-w * y + v * z) * Math.sin(thetaRad);
+
+        double yPrime = v * v1 * (1d - Math.cos(thetaRad))
+                + y * Math.cos(thetaRad)
+                + (w * x - u * z) * Math.sin(thetaRad);
+
+        double zPrime = w * v1 * (1d - Math.cos(thetaRad))
+                + z * Math.cos(thetaRad)
+                + (-v * x + u * y) * Math.sin(thetaRad);
+
+        this._head = new Point3D(xPrime, yPrime, zPrime);
+    }
   }
