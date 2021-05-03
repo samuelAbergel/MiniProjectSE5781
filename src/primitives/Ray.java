@@ -1,5 +1,7 @@
 package primitives;
 
+import java.util.List;
+
 public class Ray {
     Point3D point;
     Vector vec;
@@ -41,7 +43,29 @@ public class Ray {
                 + "]";
     }
 
+    /**
+     * find the closest Point to Ray origin
+     * @param pointsList intersections point List
+     * @return closest point
+     */
+    public Point3D findClosestPoint(List<Point3D> pointsList){
+        Point3D result =null;
+        double closestDistance = Double.MAX_VALUE;
 
+        if(pointsList== null){
+            return null;
+        }
+
+        for (Point3D p: pointsList) {
+            double temp = p.distance(point);
+            if(temp < closestDistance){
+                closestDistance =temp;
+                result =p;
+            }
+        }
+
+        return  result;
+    }
     @Override
     public boolean equals(Object obj) {
         if (this == obj)

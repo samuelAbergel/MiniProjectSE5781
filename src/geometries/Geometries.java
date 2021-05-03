@@ -3,6 +3,7 @@ package geometries;
 import primitives.Point3D;
 import primitives.Ray;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,12 +19,10 @@ public class Geometries implements Intersectable {
         add(intersectables);
     }
 
-    private void add(Intersectable[] intersectables) {
-        for(Intersectable item : intersectables)
-        {
-            this.intersectables.add(item);
-        }
+    public void add(Intersectable... geos) {
+        Collections.addAll(intersectables, geos);
     }
+
 
     @Override
     public List<Point3D> findIntersections(Ray ray) {

@@ -98,7 +98,7 @@ public class CameraRayIntersectionsIntegrationTests {
 
         // TC03: Plane parallel to lower rays 6 points
         assertCountIntersections(cam, new Plane(new Point3D(0, 0, -5), new Vector(new Point3D(0, 1, 1))), 6);
-        
+
     }
 
     /**

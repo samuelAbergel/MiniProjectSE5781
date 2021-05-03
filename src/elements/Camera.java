@@ -77,7 +77,6 @@ public class Camera {
     }
 
     /**
-     * added by @author Yona Szmerla
      *
      * @param up    delta for _vUp vector
      * @param right delta for _vRight vector
