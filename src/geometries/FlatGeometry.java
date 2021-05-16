@@ -1,6 +1,6 @@
 package geometries;
 
 
-public interface FlatGeometry  extends   Geometry{
+public abstract class FlatGeometry  extends  Geometry{
 
 }

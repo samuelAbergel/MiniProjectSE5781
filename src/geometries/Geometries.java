@@ -1,13 +1,12 @@
 package geometries;
 
-import primitives.Point3D;
 import primitives.Ray;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Geometries implements Intersectable {
+public  class Geometries implements Intersectable {
     List<Intersectable> intersectables = null;
 
     public Geometries() {
@@ -24,11 +23,12 @@ public class Geometries implements Intersectable {
     }
 
 
+
     @Override
-    public List<Point3D> findIntersections(Ray ray) {
-        List<Point3D> result = null;
+    public List<GeoPoint> findGeomIntersections(Ray ray) {
+        List<GeoPoint> result = null;
         for(Intersectable item : this.intersectables){
-            List<Point3D>itemPoints = item.findIntersections(ray);
+            List<GeoPoint>itemPoints = item.findGeomIntersections(ray);
             if(itemPoints!= null){
                 if(result == null){
                     result = new LinkedList<>();

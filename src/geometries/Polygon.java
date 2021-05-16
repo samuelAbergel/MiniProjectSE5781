@@ -12,7 +12,7 @@ import static primitives.Util.*;
  *
  * @author Dan zilberstein
  */
-public class Polygon implements FlatGeometry {
+public class Polygon extends FlatGeometry {
     /**
      * List of polygon's vertices
      */
@@ -104,9 +104,11 @@ public class Polygon implements FlatGeometry {
         return result;
     }
 
+
+
     @Override
-    public List<Point3D> findIntersections(Ray ray) {
-        List<Point3D> result = _plane.findIntersections(ray);
+    public List<GeoPoint> findGeomIntersections(Ray ray) {
+        List<GeoPoint> result = _plane.findGeomIntersections(ray);
 
         if (result == null) {
             return result;
